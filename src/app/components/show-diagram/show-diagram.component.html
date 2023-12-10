@@ -2,10 +2,12 @@
   <section class="show-diagram-close mb-2">
     <p class="fw-bold">Diagram</p>
     <button class="btn btn-outline-danger" (click)="close()">
+      <!-- event binding -->
       <i class="fa-solid fa-xmark"></i>
     </button>
   </section>
   <section class="mb-2">
-    <img src="{{imageUrl}}" alt="diagram image">
+    <img [src]="imageUrl" alt="diagram image"> 
+    <!-- string interpolation -->
   </section>
 </section>
