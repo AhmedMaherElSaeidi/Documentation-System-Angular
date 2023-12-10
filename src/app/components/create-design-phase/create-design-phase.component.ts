@@ -1,7 +1,7 @@
 import { Apollo } from 'apollo-angular';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { CreateDesignPhase } from 'src/Services/mutation.service';
+import { CreateDesignPhase, UPLOAD_FILE } from 'src/Services/mutation.service';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-design-phase.component.css'],
 })
 export class CreateDesignPhaseComponent {
+  _file: File[] = [];
   submitted: Boolean = false;
   fileUploadForm!: FormGroup;
 
@@ -29,19 +30,73 @@ export class CreateDesignPhaseComponent {
 
   onSubmit() {
     this.submitted = true;
-    for (let index = 0; index < this.filesFormArray.length; index++) {
-      // console.log(this.getError('fileImage', index));
-      console.log(
-        'has error',
-        this.filesFormArray.at(index).get('fileName')?.hasError('required')
-      );
-    }
-    // Access the form value, which now contains an array of files
     const files = this.fileUploadForm.value.files;
-    console.log(files);
-    console.log(this.fileUploadForm.valid);
 
-    // You can handle the files as needed (e.g., send them to a server, process them, etc.)
+    if (this.fileUploadForm.valid) {
+      files.forEach((file, index) => {
+        this.apollo
+          .mutate<any>({
+            mutation: UPLOAD_FILE,
+            variables: {
+              file: this._file[index],
+            },
+            context: {
+              useMultipart: true,
+            },
+          })
+          .subscribe(
+            ({ data }: any) => {
+              const _image_path = data.uploadFile.url;
+
+              this.apollo
+                .mutate<any>({
+                  mutation: CreateDesignPhase,
+                  variables: {
+                    designPhase: {
+                      filename: file.fileName,
+                      image: _image_path,
+                    },
+                  },
+                })
+                .subscribe(
+                  // @ts-ignore
+                  ({ data }) => {
+                    // Handle success here
+                    alert(
+                      'Created Successfully with id of ' +
+                        data.createDesignPhase.id
+                    );
+                  },
+                  // @ts-ignore
+                  (error) => {
+                    // Handle error here
+                    console.error('Mutation error', error);
+
+                    // Log additional details from the error response
+                    if (error.graphQLErrors) {
+                      // @ts-ignore
+                      error.graphQLErrors.forEach((graphQLError) => {
+                        console.error('GraphQL Error:', graphQLError);
+                      });
+                    }
+
+                    if (error.networkError) {
+                      console.error('Network Error:', error.networkError);
+                    }
+                  }
+                );
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+      });
+    }
+  }
+
+  onFileChange(event: any) {
+    const _file = event.target.files[0];
+    this._file.push(_file);
   }
 
   get filesFormArray() {
@@ -59,6 +114,7 @@ export class CreateDesignPhaseComponent {
 
   removeFile(index: number) {
     if (index == 0) return;
+    this._file.splice(index, 1);
     this.filesFormArray.removeAt(index);
   }
 
@@ -73,7 +129,7 @@ export class CreateDesignPhaseComponent {
     this.submitted = false;
     this.filesFormArray.clear();
     this.createFileGroup();
-    
+
     this.fileUploadForm.reset();
     if (display_msg) alert('Form Reset Successfully');
   }

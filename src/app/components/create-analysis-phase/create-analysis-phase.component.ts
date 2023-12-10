@@ -50,51 +50,52 @@ export class CreateAnalysisPhaseComponent {
         })
         .subscribe(
           ({ data }: any) => {
-            console.log(data.uploadFile.url);
+            const _image_path = data.uploadFile.url;
 
-            // this.apollo
-            // .mutate<any>({
-            //   mutation: CreateAnalysisPhase,
-            //   variables: {
-            //     analysisPhase: {
-            //       ...this.projectForm.value,
-            //     },
-            //   },
-            // })
-            // .subscribe(
-            //   // @ts-ignore
-            //   ({ data }) => {
-            //     // Handle success here
-            //     alert(
-            //       'Created Successfully with id of ' + data.createAnalysisPhase.id
-            //     );
-            //   },
-            //   // @ts-ignore
-            //   (error) => {
-            //     // Handle error here
-            //     console.error('Mutation error', error);
+            this.apollo
+              .mutate<any>({
+                mutation: CreateAnalysisPhase,
+                variables: {
+                  analysisPhase: {
+                    ...this.projectForm.value,
+                    image: _image_path,
+                  },
+                },
+              })
+              .subscribe(
+                // @ts-ignore
+                ({ data }) => {
+                  // Handle success here
+                  alert(
+                    'Created Successfully with id of ' +
+                      data.createAnalysisPhase.id
+                  );
+                },
+                // @ts-ignore
+                (error) => {
+                  // Handle error here
+                  console.error('Mutation error', error);
 
-            //     // Log additional details from the error response
-            //     if (error.graphQLErrors) {
-            //       // @ts-ignore
-            //       error.graphQLErrors.forEach((graphQLError) => {
-            //         console.error('GraphQL Error:', graphQLError);
-            //       });
-            //     }
+                  // Log additional details from the error response
+                  if (error.graphQLErrors) {
+                    // @ts-ignore
+                    error.graphQLErrors.forEach((graphQLError) => {
+                      console.error('GraphQL Error:', graphQLError);
+                    });
+                  }
 
-            //     if (error.networkError) {
-            //       console.error('Network Error:', error.networkError);
-            //     }
-            //   }
-            // );
+                  if (error.networkError) {
+                    console.error('Network Error:', error.networkError);
+                  }
+                }
+              );
           },
           (error) => {
             console.log(error);
           }
         );
 
-      this.resetForm(false);
-      // this.router.navigate(['home']);
+      this.router.navigate(['home']);
     }
   }
 

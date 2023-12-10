@@ -1,116 +1,126 @@
-<section>
-  <section class="init-phase-close mb-5">
-    <p class="fw-bold">project Charter [Edit Form]</p>
-    <button class="btn btn-outline-danger" (click)="close()">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </section>
-  <section>
-    <form
-      [formGroup]="projectForm"
-      (ngSubmit)="onSubmit()"
-      class="init-phase-form"
-    >
-      <div class="form-group mb-2 form-row">
-        <label for="title">Project Title</label>
-        <input
-          type="text"
-          id="title"
-          formControlName="title"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("title") }}</div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="startDate">Project Start Date</label>
-        <input
-          type="date"
-          id="startDate"
-          formControlName="startDate"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("startDate") }}</div>
-        <div class="error-message" *ngIf="startDateBeforeEndDateValidator()">
-          Start date must be before end date
-        </div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="finishDate">Project Finish Date</label>
-        <input
-          type="date"
-          id="finishDate"
-          formControlName="finishDate"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("finishDate") }}</div>
-        <div class="error-message" *ngIf="startDateBeforeEndDateValidator()">
-          Start date must be before end date
-        </div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="objectives">Project Objectives</label>
-        <input
-          type="text"
-          id="objectives"
-          formControlName="objectives"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("objectives") }}</div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="manager">Project Manager</label>
-        <input
-          type="text"
-          id="manager"
-          formControlName="manager"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("manager") }}</div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="budgetInfo">Budget Information</label>
-        <input
-          type="text"
-          id="budgetInfo"
-          formControlName="budgetInfo"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("budgetInfo") }}</div>
-      </div>
-
-      <div class="form-group mb-2 form-row">
-        <label for="scopeStatements">Project Scope Statements</label>
-        <input
-          type="text"
-          id="scopeStatements"
-          formControlName="scopeStatements"
-          class="form-control"
-          required
-        />
-        <div class="error-message">{{ getError("scopeStatements") }}</div>
-      </div>
-
-      <div class="form-submit mt-4">
-        <button type="submit" class="btn btn-success">Edit</button>
-        <button
-          type="reset"
-          class="btn btn-danger"
-          (click)="this.delete_phase(this.phaseID)"
+<section class="phase-form">
+  <section class="content">
+    <section class="left">
+      <h1>Initiation Phase</h1>
+    </section>
+    <section class="right">
+      <section class="title">
+        <h4>introduction</h4>
+      </section>
+      <section class="form">
+        <form
+          [formGroup]="projectForm"
+          (ngSubmit)="onSubmit()"
+          class="init-phase-form"
         >
-          Delete
-        </button>
-      </div>
-    </form>
+          <div class="form-group mb-2 form-row">
+            <label for="title">Project Title</label>
+            <input
+              type="text"
+              id="title"
+              formControlName="title"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("title") }}</div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="startDate">Project Start Date</label>
+            <input
+              type="date"
+              id="startDate"
+              formControlName="startDate"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("startDate") }}</div>
+            <div
+              class="error-message"
+              *ngIf="startDateBeforeEndDateValidator()"
+            >
+              Start date must be before end date
+            </div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="finishDate">Project Finish Date</label>
+            <input
+              type="date"
+              id="finishDate"
+              formControlName="finishDate"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("finishDate") }}</div>
+            <div
+              class="error-message"
+              *ngIf="startDateBeforeEndDateValidator()"
+            >
+              Start date must be before end date
+            </div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="objectives">Project Objectives</label>
+            <input
+              type="text"
+              id="objectives"
+              formControlName="objectives"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("objectives") }}</div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="manager">Project Manager</label>
+            <input
+              type="text"
+              id="manager"
+              formControlName="manager"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("manager") }}</div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="budgetInfo">Budget Information</label>
+            <input
+              type="text"
+              id="budgetInfo"
+              formControlName="budgetInfo"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("budgetInfo") }}</div>
+          </div>
+
+          <div class="form-group mb-2 form-row">
+            <label for="scopeStatements">Project Scope Statements</label>
+            <input
+              type="text"
+              id="scopeStatements"
+              formControlName="scopeStatements"
+              class="form-control"
+              required
+            />
+            <div class="error-message">{{ getError("scopeStatements") }}</div>
+          </div>
+
+          <div class="form-submit mt-4">
+            <button type="submit" class="btn btn-success">Edit</button>
+            <button
+              type="reset"
+              class="btn btn-danger"
+              (click)="this.delete_phase(this.phaseID)"
+            >
+              Delete
+            </button>
+          </div>
+        </form>
+      </section>
+    </section>
   </section>
 </section>
