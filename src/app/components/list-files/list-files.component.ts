@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { GetAllDesignPhases } from 'src/Services/query.service';
+import { Apollo } from 'apollo-angular';
 
 @Component({
   selector: 'app-list-files',
@@ -8,11 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListFilesComponent implements OnInit {
   files: any = [];
-  
-  constructor(private router: Router) {}
+  ascending: boolean = false;
+
+  constructor(private apollo: Apollo, private router: Router) {}
 
   ngOnInit(): void {
-    this.files = [];
+    this.apollo
+      .watchQuery<any>({
+        query: GetAllDesignPhases,
+      })
+      .valueChanges.subscribe(({ data }) => {
+        this.files = data.getAllDesignPhases;
+      });
+  }
+
+  getAllFiles(): void {
+    this.apollo
+    .watchQuery<any>({
+      query: GetAllDesignPhases,
+    })
+    .valueChanges.subscribe(({ data }) => {
+      this.files = data.getAllDesignPhases;
+    });
   }
 
   selectedCard(id: number) {
