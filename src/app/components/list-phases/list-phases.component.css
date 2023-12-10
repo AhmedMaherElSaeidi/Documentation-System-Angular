@@ -1,0 +1,57 @@
+.card-deck {
+  border: none;
+  border-radius: unset;
+}
+.card-deck .list-phases-header {
+  background-color: #cdcdcd;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 0.15em;
+  margin-right: 0.25rem;
+  box-shadow: 1px 1px 3px black;
+}
+.card-deck .deck-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.25em;
+}
+.card-deck .btn {
+  margin-right: 0.25em;
+  border-radius: 0.25em;
+  background-color: whitesmoke;
+}
+.card-deck > .card {
+  border: none;
+  border-radius: unset;
+  border-bottom: 1px solid gray;
+}
+.card-deck > .card:hover {
+  background-color: #f8f8ff;
+  cursor: pointer;
+}
+.card-deck > .card {
+  padding-bottom: 0rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-left: 30px;
+  background: repeating-linear-gradient(
+        #0000 0 calc(1.2rem - 1px),
+        #66afe1 0 1.2rem
+      )
+      right bottom / 100% 100%,
+    linear-gradient(red 0 0) 30px 0/2px 100% #fff;
+  background-repeat: no-repeat;
+  line-height: 1.2rem;
+}
+.card-deck > .card .card-title {
+  margin-bottom: 0.95rem;
+}
+.card-deck > .card .card-text {
+  margin-bottom: 0.05em;
+}
+.card-deck span {
+  color: #565656;
+}

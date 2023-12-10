@@ -1,0 +1,83 @@
+<section class="phase-form">
+  <section class="content">
+    <section class="left">
+      <h1>Design Phase</h1>
+    </section>
+    <section class="right">
+      <section class="title">
+        <h4>Diagrams</h4>
+        <h6>UML Diagrams, Database Design, & User Interface Design</h6>
+      </section>
+      <section class="form">
+        <form [formGroup]="fileUploadForm" (ngSubmit)="onSubmit()">
+          <section formArrayName="files">
+            <section
+              *ngFor="let fileGroup of filesFormArray.controls; let i = index"
+            >
+              <section [formGroupName]="i" class="mb-2 upload-file-container">
+                <section>
+                  <section>
+                    <section class="error-message">
+                      {{ getError("fileName", i) }}
+                    </section>
+                    <section class="form-group mb-2 form-row">
+                      <label for="fileName">File Name</label>
+                      <input
+                        type="text"
+                        id="fileName"
+                        placeholder="File Name"
+                        formControlName="fileName"
+                        class="form-control"
+                        required
+                      />
+                    </section>
+                  </section>
+                  <section>
+                    <section class="error-message">
+                      {{ getError("fileImage", i) }}
+                    </section>
+                    <section class="form-group mb-2 form-row">
+                      <label for="fileImage">Image</label>
+                      <input
+                        type="file"
+                        id="fileImage"
+                        formControlName="fileImage"
+                        class="form-control"
+                        required
+                      />
+                    </section>
+                  </section>
+                </section>
+                <section>
+                  <button
+                    class="btn btn-outline-secondary"
+                    (click)="removeFile(i)"
+                  >
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </section>
+              </section>
+            </section>
+          </section>
+
+          <section class="form-addbtn">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              (click)="createFileGroup()"
+            >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </section>
+
+          <section class="form-submit justify-self-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="resetForm()">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </section>
+        </form>
+      </section>
+    </section>
+  </section>
+</section>

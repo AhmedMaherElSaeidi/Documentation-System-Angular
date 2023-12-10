@@ -1,0 +1,37 @@
+.init-phase-close {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px black solid;
+  background-color: #f8f8ff;
+  padding: 0.45rem;
+  padding-bottom: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+.init-phase-close > button {
+  border: none;
+  border-radius: 50%;
+}
+.init-phase-form > .form-row {
+  display: flex;
+}
+.init-phase-form > .form-row .error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.init-phase-form > .form-row > label {
+  width: 20rem;
+  margin-left: 1rem;
+}
+.init-phase-form > .form-row > input {
+  max-width: 35rem;
+}
+.init-phase-form > .form-submit {
+  text-align: center;
+}
+.init-phase-form > .form-submit > button {
+  width: 7rem;
+  margin-left: 0.5em;
+}

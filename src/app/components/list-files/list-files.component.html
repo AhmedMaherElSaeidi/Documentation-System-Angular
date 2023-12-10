@@ -1,0 +1,26 @@
+<section class="card-deck">
+  <section class="mb-2 deck-nav">
+    <section class="list-files-header">
+      Diagrams & UI entered in SDLC
+    </section>
+      <section class="btn" (click)="(null)" title="refresh">
+        <i class="fas fa-sync-alt"></i>
+      </section>
+  </section>
+
+  <section
+    class="card mb-1"
+    *ngFor="let file of files"
+    (click)="selectedCard(file.id)"
+  >
+    <section class="card-body">
+      <h5 class="card-title">{{ file.name }}</h5>
+    </section>
+  </section>
+  
+  <section class="card mb-1" *ngIf="files.length == 0">
+    <section class="card-body">
+      <h5 class="card-title">No Saved files</h5>
+    </section>
+  </section>
+</section>

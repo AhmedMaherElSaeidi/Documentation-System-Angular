@@ -1,0 +1,17 @@
+<section class="container-fluid dropdown-list-container">
+  <section class="dropdown-list">
+    <select
+      class="form-select"
+      [(ngModel)]="selectedOption"
+      (click)="selectOption(selectedOption)"
+    >
+      <option
+        *ngFor="let option of criteriaOptions"
+        value="{{ option.route }}"
+        [selected]="isSelected(option.route)"
+      >
+        {{ option.name }}
+      </option>
+    </select>
+  </section>
+</section>

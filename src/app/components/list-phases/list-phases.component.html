@@ -1,0 +1,47 @@
+<section class="card-deck">
+  <section class="mb-2 deck-nav">
+    <section class="list-phases-header">All Phases In SDLC</section>
+    <section>
+      <section class="btn" (click)="getAllPhases()" title="refresh">
+        <i class="fas fa-sync-alt"></i>
+      </section>
+      <section class="btn" title="sort" (click)="reverseArray()">
+        <i class="fas fa-sort"></i>
+      </section>
+    </section>
+  </section>
+  <section
+    class="card mb-1"
+    *ngFor="let phase of phases"
+    (click)="selectedCard(phase.id, phase.type)"
+  >
+    <section *ngIf="isEqual(phase.type, 'init-phase')" class="card-body">
+      <h5 class="card-title">{{ phase.title }}</h5>
+      <p class="card-text">
+        <span class="fw-bold disabled">Manager</span> {{ phase.manager }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold">Objectives</span> {{ phase.objectives }}
+      </p>
+      <small class="smallfw-bold"
+        ><span class="fw-bold">Date</span> {{ phase.startDate }} -
+        {{ phase.finishDate }}</small
+      >
+    </section>
+    <section *ngIf="isEqual(phase.type, 'analysis-phase')" class="card-body">
+      <h5 class="card-title">{{ phase.sys_fr }}</h5>
+      <p class="card-text">
+        <span class="fw-bold disabled">Audience</span> {{ phase.audience }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold disabled">Purpose</span>
+        {{ phase.purpose }}
+      </p>
+    </section>
+  </section>
+  <section class="card mb-1" *ngIf="phases.length == 0">
+    <section class="card-body">
+      <h5 class="card-title">No Saved Phases</h5>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,133 @@
+.phase-form {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.phase-form .content {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+  flex-direction: row;
+  border-radius: 0.25em;
+}
+.phase-form .left {
+  width: 18em;
+  padding: 0.25em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: url("src/assets/images/sincerely-media-EtyBBUByPSQ-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.phase-form .left > h1 {
+  color: black;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: ui-monospace ui-rounded ui-sans-serif;
+}
+.phase-form .right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 2em;
+  background-color: #f8f8ff;
+}
+.phase-form .form {
+  width: 100%;
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+}
+.phase-form .right .title {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.phase-form .right .title h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+.phase-form .form-row {
+  display: flex;
+}
+.phase-form .error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.phase-form .form-row label {
+  width: 14rem;
+}
+.phase-form .form-row input {
+  max-width: 35rem;
+}
+.phase-form .form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+.phase-form .form-addbtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+}
+.phase-form .form-addbtn {
+  padding: 1em;
+}
+.phase-form .form-submit > button {
+  width: 15em;
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+}
+.phase-form .upload-file-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phase-form .upload-file-container > section:first-child {
+  width: 90%;
+}
+.phase-form .upload-file-container > section:nth-child(2) {
+  padding: 1em;
+}
+.phase-form .upload-file-container > section:nth-child(2) i:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* Responsiveness:Start */
+@media screen and (max-width: 780px) {
+  .phase-form .content {
+    flex-direction: column !important;
+    width: 400px;
+    height: fit-content;
+    margin: 20px auto;
+  }
+  .phase-form .left {
+    height: 250px;
+    width: 100%;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .phase-form .content {
+    flex-direction: column !important;
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+  }
+  .phase-form .left {
+    width: 100%;
+    border-radius: 0px;
+  }
+}
