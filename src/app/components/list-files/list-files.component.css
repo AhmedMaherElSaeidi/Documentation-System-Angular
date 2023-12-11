@@ -4,8 +4,16 @@
 }
 .card-deck .deck-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 0.25em;
+}
+.card-deck .deck-nav > section {
+  margin-right: 0.25em;
+}
+.card-deck .deck-nav .btn:hover i {
+  color: green;
+  cursor: pointer;
+  font-size: 1.2em;
 }
 .card-deck .deck-nav .list-files-header {
   padding: 0.5em;
@@ -26,7 +34,7 @@
   border-bottom: 1px solid gray;
 }
 .card-deck > .card:hover {
-  background-color: #f8f8ff;
+  background-color: #ecb4647d;
   cursor: pointer;
 }
 .card-deck > .card {

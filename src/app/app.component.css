@@ -1,11 +1,18 @@
-nav,
-footer {
-  background-color: #F8F8FF !important;
+nav {
+  background-color: #ecb4647d !important;
 }
-nav .active-link{
-  color: #0096FF; /* Adjust the styles as needed */
+nav .active-link {
+  color: #1634a6;
   font-weight: bold;
 }
 main {
   min-height: 80vh;
+}
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white !important;
+  background-color: #64442c !important;
 }

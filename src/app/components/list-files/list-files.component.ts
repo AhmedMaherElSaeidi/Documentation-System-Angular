@@ -53,6 +53,10 @@ export class ListFilesComponent implements OnInit {
       });
   }
 
+  reverseArray(): void {
+    this.files.reverse();
+  }
+
   selectedCard(id: number, type: string) {
     this.router.navigate(['all-files', 'show-diagram', type, id]);
   }

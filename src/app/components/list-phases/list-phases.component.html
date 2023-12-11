@@ -1,13 +1,11 @@
 <section class="card-deck">
   <section class="mb-2 deck-nav">
+    <section class="btn" (click)="getAllPhases()" title="refresh">
+      <i class="fas fa-sync-alt"></i>
+    </section>
     <section class="list-phases-header">All Phases In SDLC</section>
-    <section>
-      <section class="btn" (click)="getAllPhases()" title="refresh">
-        <i class="fas fa-sync-alt"></i>
-      </section>
-      <section class="btn" title="sort" (click)="reverseArray()">
-        <i class="fas fa-sort"></i>
-      </section>
+    <section class="btn" title="sort" (click)="reverseArray()">
+      <i class="fas fa-sort"></i>
     </section>
   </section>
   <section
