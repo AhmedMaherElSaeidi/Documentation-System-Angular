@@ -5,7 +5,7 @@
     </section>
     <section class="right">
       <section class="title">
-        <h4>Software Requirements Specification (S.R.S.)</h4>
+        <h4><i class="fa-solid fa-asterisk"></i> Software Requirements Specification (S.R.S.)</h4>
       </section>
       <section class="form">
         <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
@@ -95,7 +95,7 @@
               required
             ></textarea>
           </section>
-          <section class="mb-2">
+          <section class="mb-4">
             <section class="error-message">
               {{ getError("image") }}
             </section>
@@ -112,10 +112,10 @@
             </section>
           </section>
           <section class="form-submit">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-dark">Save</button>
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-dark"
               (click)="resetForm()"
             >
               Reset

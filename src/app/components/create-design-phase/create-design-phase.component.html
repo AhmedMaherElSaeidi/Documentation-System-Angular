@@ -5,53 +5,45 @@
     </section>
     <section class="right">
       <section class="title">
-        <h4>Diagrams</h4>
+        <h4><i class="fa-solid fa-diagram-project"></i> Diagrams</h4>
         <h6>UML Diagrams, Database Design, & User Interface Design</h6>
       </section>
       <section class="form">
         <form [formGroup]="fileUploadForm" (ngSubmit)="onSubmit()">
-          <section formArrayName="files">
+          <section formArrayName="files" class="mb-3">
             <section
+              class="mb-1"
               *ngFor="let fileGroup of filesFormArray.controls; let i = index"
             >
-              <section [formGroupName]="i" class="mb-2 upload-file-container">
+              <section
+                [formGroupName]="i"
+                class="mb-2 upload-file-container mb-2"
+              >
+                <small class="error-message">{{
+                  getError("fileImage", i)
+                }}</small>
+                <small class="error-message">{{
+                  getError("fileName", i)
+                }}</small>
                 <section>
-                  <section>
-                    <section class="error-message">
-                      {{ getError("fileName", i) }}
-                    </section>
-                    <section class="form-group mb-2 form-row">
-                      <label for="fileName">File Name</label>
-                      <input
-                        type="text"
-                        id="fileName"
-                        placeholder="File Name"
-                        formControlName="fileName"
-                        class="form-control"
-                        required
-                      />
-                    </section>
-                  </section>
-                  <section>
-                    <section class="error-message">
-                      {{ getError("fileImage", i) }}
-                    </section>
-                    <section class="form-group mb-2 form-row">
-                      <label for="fileImage">Image</label>
-                      <input
-                        type="file"
-                        id="fileImage"
-                        formControlName="fileImage"
-                        class="form-control"
-                        (change)="onFileChange($event)"
-                        required
-                      />
-                    </section>
-                  </section>
-                </section>
-                <section>
+                  <input
+                    type="text"
+                    id="fileName"
+                    placeholder="File Name"
+                    formControlName="fileName"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    type="file"
+                    id="fileImage"
+                    formControlName="fileImage"
+                    class="form-control"
+                    (change)="onFileChange($event)"
+                    required
+                  />
                   <button
-                    class="btn btn-outline-secondary"
+                    class="btn btn-outline-dark"
                     (click)="removeFile(i)"
                   >
                     <i class="fa-solid fa-trash-can"></i>
@@ -61,20 +53,17 @@
             </section>
           </section>
 
-          <section class="form-addbtn">
+          <section class="form-submit">
+            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="button" class="btn btn-dark" (click)="resetForm()">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
             <button
               type="button"
-              class="btn btn-outline-secondary"
+              class="btn btn-outline-dark"
               (click)="createFileGroup()"
             >
               <i class="fa-solid fa-plus"></i>
-            </button>
-          </section>
-
-          <section class="form-submit justify-self-end">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-warning" (click)="resetForm()">
-              <i class="fa-solid fa-rotate-left"></i> Reset
             </button>
           </section>
         </form>

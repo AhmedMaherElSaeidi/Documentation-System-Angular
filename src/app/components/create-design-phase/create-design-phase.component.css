@@ -43,6 +43,7 @@
   width: 100%;
   display: flex;
   min-height: 60vh;
+  align-items: center;
   flex-direction: column;
 }
 .phase-form .right .title {
@@ -73,31 +74,34 @@
   justify-content: center;
   margin-top: 0.5em;
 }
-.phase-form .form-addbtn {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0.5em;
-}
-.phase-form .form-addbtn {
-  padding: 1em;
-}
 .phase-form .form-submit > button {
-  width: 15em;
+  width: 12em;
   margin-right: 0.5em;
   border-radius: 0.5em;
 }
-.phase-form .upload-file-container {
+.phase-form .form-submit > button:last-child:hover i {
+  color: green;
+  cursor: pointer;
+}
+.phase-form .form-submit > button:last-child {
+  width: 4em;
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+}
+.phase-form .upload-file-container > small {
+  display: block;
+}
+.phase-form .upload-file-container > section {
   display: flex;
-  justify-content: space-between;
+  height: 2.35em;
   align-items: center;
 }
-.phase-form .upload-file-container > section:first-child {
-  width: 90%;
+.phase-form .upload-file-container > section > input,
+.phase-form .upload-file-container > section > button {
+  margin-right: 0.25em;
+  text-wrap: nowrap;
 }
-.phase-form .upload-file-container > section:nth-child(2) {
-  padding: 1em;
-}
-.phase-form .upload-file-container > section:nth-child(2) i:hover {
+.phase-form .upload-file-container > section > button:hover i {
   color: red;
   cursor: pointer;
 }
@@ -117,15 +121,18 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
+  .phase-form form {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 425px) {
-  .phase-form  .content {
+  .phase-form .content {
     flex-direction: column !important;
     width: 100%;
     margin: 0px;
     border-radius: 0px;
   }
-  .phase-form  .left {
+  .phase-form .left {
     width: 100%;
     border-radius: 0px;
   }

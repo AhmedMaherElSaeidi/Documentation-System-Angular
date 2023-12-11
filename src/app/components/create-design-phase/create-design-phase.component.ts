@@ -109,6 +109,7 @@ export class CreateDesignPhaseComponent {
       fileImage: ['', [Validators.required]],
     });
 
+    this.submitted = false;
     this.filesFormArray.push(fileFormGroup);
   }
 
@@ -121,7 +122,7 @@ export class CreateDesignPhaseComponent {
   getError(controlName: string, index: number) {
     const control = this.filesFormArray.at(index).get(controlName);
     return control?.hasError('required') && this.submitted
-      ? '*This field is required'
+      ? `${controlName} *This field is required`
       : '';
   }
 
