@@ -5,7 +5,7 @@
     </section>
     <section class="right">
       <section class="title">
-        <h4>Software Requirements Specification (S.R.S.)</h4>
+        <h4><i class="fa-solid fa-asterisk"></i> Software Requirements Specification (S.R.S.)</h4>
       </section>
       <section class="form">
         <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
@@ -96,10 +96,10 @@
             ></textarea>
           </section>
           <section class="form-submit">
-            <button type="submit" class="btn btn-success">Update</button>
+            <button type="submit" class="btn btn-dark">Update</button>
             <button
               type="button"
-              class="btn btn-danger"
+              class="btn btn-dark"
               (click)="this.delete_phase(this.phaseID)"
             >
               Delete
