@@ -68,11 +68,11 @@ export class ShowDiagramComponent {
       })
       .subscribe();
 
-    alert(`image with id ${this._id} has been removed`)
-    this.close();
+    alert(`image with id ${this._id} has been removed`);
+    this.close('home');
   }
 
-  close() {
-    this.router.navigate(['home']);
+  close(route: string = 'all-files') {
+    this.router.navigate([route]);
   }
 }

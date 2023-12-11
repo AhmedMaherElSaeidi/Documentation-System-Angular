@@ -1,17 +1,26 @@
 .show-diagram-close {
   display: flex;
   align-items: center;
+  padding-bottom: 0.25em;
   justify-content: space-between;
   border-bottom: 1px black solid;
 }
-.show-diagram-close > .left {
+.show-diagram-close > .left > p {
+  margin-bottom: 0em;
+}
+.show-diagram-close > .right {
   display: flex;
 }
-.show-diagram-close > .left > span {
+.show-diagram-close > .right > span {
+  border: none;
+  display: flex;
+  align-items: center;
   margin-right: 0.25em;
+  justify-content: center;
+  width: 1.5em !important;
+  height: 1.5em !important;
 }
-.show-diagram-close > .left > span > i:hover,
-.show-diagram-close > .right > i:hover {
+.show-diagram-close > .right > span:hover > i {
   color: red;
   cursor: pointer;
 }
