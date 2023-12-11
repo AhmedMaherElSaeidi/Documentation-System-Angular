@@ -30,7 +30,7 @@ const routes: Routes = [
     path: 'all-files',
     component: AllFilesComponent,
     children: [
-      { path: 'show-diagram/:id', component: ShowDiagramComponent }, // http://localhost:4200/all-files/show-diagram/:id
+      { path: 'show-diagram/:type/:id', component: ShowDiagramComponent }, // http://localhost:4200/all-files/show-diagram/:id
     ],
   }, // http://localhost:4200/all-files
 ];

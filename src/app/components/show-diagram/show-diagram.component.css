@@ -4,13 +4,14 @@
   justify-content: space-between;
   border-bottom: 1px black solid;
 }
-.show-diagram-close > button {
-  border: none;
-  border-radius: 50%;
+.show-diagram-close > .left {
+  display: flex;
 }
-.list-files-section img {
-  width: 100%;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+.show-diagram-close > .left > span {
+  margin-right: 0.25em;
+}
+.show-diagram-close > .left > span > i:hover,
+.show-diagram-close > .right > i:hover {
+  color: red;
+  cursor: pointer;
 }

@@ -62,10 +62,7 @@ export class CreateDesignPhaseComponent {
                   // @ts-ignore
                   ({ data }) => {
                     // Handle success here
-                    alert(
-                      'Created Successfully with id of ' +
-                        data.createDesignPhase.id
-                    );
+                    // console.log(data);
                   },
                   // @ts-ignore
                   (error) => {
@@ -91,6 +88,9 @@ export class CreateDesignPhaseComponent {
             }
           );
       });
+
+      alert('files were added successfully');
+      this.router.navigate(['home']);
     }
   }
 

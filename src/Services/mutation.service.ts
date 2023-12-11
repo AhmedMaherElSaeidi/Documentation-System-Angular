@@ -92,6 +92,14 @@ export const CreateDesignPhase = gql`
   }
 `;
 
+export const DeleteDesignPhase = gql`
+  mutation Mutation($id: ID!) {
+    deleteDesignPhase(id: $id) {
+      id
+    }
+  }
+`;
+
 export const UPLOAD_FILE = gql`
   mutation UploadFile($file: Upload!) {
     uploadFile(file: $file) {

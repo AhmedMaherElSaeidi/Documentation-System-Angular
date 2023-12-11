@@ -1,7 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { GetDesignPhase } from 'src/Services/query.service';
+import { GetAnalysisPhase, GetDesignPhase } from 'src/Services/query.service';
+import {
+  DeleteAnalysisPhase,
+  DeleteDesignPhase,
+} from 'src/Services/mutation.service';
 
 @Component({
   selector: 'app-show-diagram',
@@ -9,6 +13,8 @@ import { GetDesignPhase } from 'src/Services/query.service';
   styleUrls: ['./show-diagram.component.css'],
 })
 export class ShowDiagramComponent {
+  _id?: string;
+  _type?: string;
   imageUrl?: string;
 
   constructor(
@@ -19,24 +25,53 @@ export class ShowDiagramComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const _id = params['id'];
+      this._id = params['id'];
+      this._type = params['type'];
+
+      const _query =
+        this._type == 'design-phase'
+          ? GetDesignPhase
+          : this._type == 'analysis-phase'
+          ? GetAnalysisPhase
+          : null;
 
       this.apollo
         .query<any>({
-          query: GetDesignPhase,
+          query: _query,
           variables: {
-            id: _id,
+            id: this._id,
           },
         })
         .subscribe(({ data }) => {
-          this.imageUrl = data.getDesignPhase.image;
-          console.log(this.imageUrl);
-          
+          if (this._type == 'design-phase')
+            this.imageUrl = data.getDesignPhase.image;
+          if (this._type == 'analysis-phase')
+            this.imageUrl = data.getAnalysisPhase.image;
         });
     });
   }
 
+  delete_image() {
+    const _query =
+      this._type == 'design-phase'
+        ? DeleteDesignPhase
+        : this._type == 'analysis-phase'
+        ? DeleteAnalysisPhase
+        : null;
+
+    this.apollo
+      .mutate<any>({
+        mutation: _query,
+        variables: {
+          id: this._id,
+        },
+      })
+      .subscribe();
+
+    this.close();
+  }
+
   close() {
-    this.router.navigate(['all-files']);
+    this.router.navigate(['home']);
   }
 }

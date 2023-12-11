@@ -9,10 +9,15 @@
   <section
     class="card mb-1"
     *ngFor="let file of files"
-    (click)="selectedCard(file.id)"
+    (click)="selectedCard(file.id, file.type)"
   >
-    <section class="card-body">
+    <section *ngIf="isEqual(file.type, 'design-phase')" class="card-body">
       <h5 class="card-title">{{ file.filename }}</h5>
+      <small><span class="fw-bold disabled">Type</span> {{ file.type }}</small>
+    </section>
+    <section *ngIf="isEqual(file.type, 'analysis-phase')" class="card-body">
+      <h5 class="card-title">{{ file.sys_fr }}</h5>
+      <small><span class="fw-bold disabled">Type</span> {{ file.type }}</small>
     </section>
   </section>
 
