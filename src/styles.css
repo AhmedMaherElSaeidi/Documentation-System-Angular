@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
+.btn:focus,
 .form-control:focus,
 .form-select:focus {
-  box-shadow: none;
+  border-color: #1634a6;
+  box-shadow: unset !important;
 }

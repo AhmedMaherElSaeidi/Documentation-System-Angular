@@ -68,6 +68,7 @@ export class ShowDiagramComponent {
       })
       .subscribe();
 
+    alert(`image with id ${this._id} has been removed`)
     this.close();
   }
 

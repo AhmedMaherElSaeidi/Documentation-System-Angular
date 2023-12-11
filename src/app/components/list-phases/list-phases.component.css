@@ -34,7 +34,7 @@
   border-bottom: 1px solid gray;
 }
 .card-deck > .card:hover {
-  background-color: #ecb4647d;
+  background-color: #c4c4c47d;
   cursor: pointer;
 }
 .card-deck > .card {
