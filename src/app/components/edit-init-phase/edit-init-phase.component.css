@@ -13,7 +13,7 @@
   border-radius: 0.25em;
 }
 .phase-form .left {
-  width: 18em;
+  width: 20em;
   padding: 0.25em;
   display: flex;
   align-items: center;
@@ -42,8 +42,9 @@
 .phase-form .form {
   width: 100%;
   display: flex;
-  min-height: 60vh;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 .phase-form .right .title {
   text-align: center;
@@ -116,6 +117,9 @@
     border-radius: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+  }
+  .phase-form form {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 425px) {
