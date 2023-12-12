@@ -58,12 +58,15 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 .social-item:hover {
-  background: #0779e4;
   color: #fff;
+  background: #0779e4;
 }
 .social li {
   margin-right: 0.25em;
   display: inline-block;
+}
+.social li:hover {
+  cursor: pointer;
 }
 .social li a {
   display: inline-block;
