@@ -1,4 +1,4 @@
-![Rocket Icon](./src/favicon.ico) # Documentation System using Angular Framework
+<img src="./src/favicon.ico" style="width: 32px; height: 32px;display:inline;"/> # Documentation System using Angular Framework
 
 ## Table of Contents
 1. [SDLC Tab](#sdlc-tab)
