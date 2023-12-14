@@ -8,6 +8,7 @@ nav .nav-icon {
 }
 main {
   min-height: 80vh;
+  background-color: #faf9f6af;
 }
 .site-footer {
   padding: 4em 0;
