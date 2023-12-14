@@ -1,4 +1,4 @@
-# Documentation System using Angular Framework
+![Rocket Icon](./src/favicon.ico) # Documentation System using Angular Framework
 
 ## Table of Contents
 1. [SDLC Tab](#sdlc-tab)
