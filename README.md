@@ -55,7 +55,7 @@ You can tap on the file name to display the file.
 ## User Interface
 
 ![Home Tab](./src/assets/images/home-view.png)
-![SDLC Tab](./src/assets/images/sdlc-view.png)
-![AllFiles Tab](./src/assets/images/allfiles-view.png)
+![SDLC Tab](./src/assets/images/sdlc-view.jpg)
+![AllFiles Tab](./src/assets/images/allfiles-view.jpg)
 
 You can check the application backend here [Backend Repository](https://github.com/AhmedMaherElSaeidi/Documentation-System-NodeJS).
