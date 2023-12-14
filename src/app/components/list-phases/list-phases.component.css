@@ -19,7 +19,7 @@
   margin-right: 0.25em;
 }
 .card-deck .deck-nav .btn:hover i {
-  color: green;
+  color: #1634a6;
   cursor: pointer;
   font-size: 1.2em;
 }
@@ -31,11 +31,10 @@
 .card-deck > .card {
   border: none;
   border-radius: unset;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #FAF9F6;
 }
 .card-deck > .card:hover {
-  background-color: #c4c4c47d;
-  cursor: pointer;
+  background-color: #FAF9F6;
 }
 .card-deck > .card {
   padding-bottom: 0rem;
@@ -57,9 +56,26 @@
 .card-deck > .card .card-title {
   margin-bottom: 0.95rem;
 }
+.card-deck > .card .card-title:hover {
+  cursor: pointer;
+}
+.card-deck > .card .card-title:hover > i {
+  color: #1634a6;
+}
+.card-deck > .card .card-btn {
+  display: flex;
+  margin-top: 0.35em;
+  align-items: center;
+  justify-content: flex-end;
+}
+.card-deck > .card .card-btn:hover {
+  color: #1634a6;
+  cursor: pointer;
+  font-size: 0.95em;
+}
 .card-deck > .card .card-text {
   margin-bottom: 0.05em;
 }
-.card-deck span {
+.card-deck > .card span {
   color: #565656;
 }

@@ -1,0 +1,61 @@
+<section class="view-phase">
+  <section class="card">
+    <section *ngIf="isEqual(_type, 'init-phase')" class="card-body">
+      <h5 class="card-title">{{ _init_phase?.title }}</h5>
+      <p class="card-text">
+        <span class="fw-bold disabled">Manager</span> {{ _init_phase?.manager }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold">Objectives</span> {{ _init_phase?.objectives }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold">Start Date</span> {{ _init_phase?.startDate }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold">Finish Date</span> {{ _init_phase?.finishDate }}
+      </p>
+      <p class="card-text">
+        <span class="fw-bold">Budget Info</span> {{ _init_phase?.budgetInfo }}
+      </p>
+      <p class="card-text mb-3">
+        <span class="fw-bold">Scope Statements</span>
+        {{ _init_phase?.scopeStatements }}
+      </p>
+      <section class="card-btn">
+        <i class="fa-solid fa-arrow-left" (click)="return_back()"></i>
+      </section>
+    </section>
+    <section *ngIf="isEqual(_type, 'analysis-phase')" class="card-body">
+      <h5 class="card-title">{{ _analysis_phase?.sys_fr }}</h5>
+      <section class="card-content">
+        <section class="card-content-left">
+          <p class="card-text">
+            <span class="fw-bold disabled">Introduction</span>
+            {{ _analysis_phase?.introduction }}
+          </p>
+          <p class="card-text">
+            <span class="fw-bold disabled">Purpose</span>
+            {{ _analysis_phase?.purpose }}
+          </p>
+          <p class="card-text">
+            <span class="fw-bold disabled">Audience</span>
+            {{ _analysis_phase?.audience }}
+          </p>
+          <p class="card-text">
+            <span class="fw-bold disabled">Description</span>
+            {{ _analysis_phase?.sw_description }}
+          </p>
+        </section>
+        <section class="card-content-right">
+          <p class="card-text mb-2">
+            <span class="fw-bold disabled">UseCase</span>
+          </p>
+          <img [src]="_analysis_phase?.image" alt="usecase_diagram" />
+        </section>
+      </section>
+      <section class="card-btn">
+        <i class="fa-solid fa-arrow-left" (click)="return_back()"></i>
+      </section>
+    </section>
+  </section>
+</section>

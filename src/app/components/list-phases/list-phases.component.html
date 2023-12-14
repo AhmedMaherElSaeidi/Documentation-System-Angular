@@ -8,13 +8,15 @@
       <i class="fas fa-sort"></i>
     </section>
   </section>
-  <section
-    class="card mb-1"
-    *ngFor="let phase of phases"
-    (click)="selectedCard(phase.id, phase.type)"
-  >
+  <section class="card mb-1" *ngFor="let phase of phases">
     <section *ngIf="isEqual(phase.type, 'init-phase')" class="card-body">
-      <h5 class="card-title">{{ phase.title }}</h5>
+      <h5
+        class="card-title"
+        (click)="editPhase(phase.id, phase.type)"
+        title="edit {{ phase.type }}"
+      >
+        <i class="fa-solid fa-pen-to-square"></i> {{ phase.title }}
+      </h5>
       <p class="card-text">
         <span class="fw-bold disabled">Manager</span> {{ phase.manager }}
       </p>
@@ -25,9 +27,18 @@
         ><span class="fw-bold">Date</span> {{ phase.startDate }} -
         {{ phase.finishDate }}</small
       >
+      <section class="card-btn" title="view {{phase.type}}" (click)="viewPhase(phase.id, phase.type)">
+        <i class="fa-solid fa-angles-right"></i>
+      </section>
     </section>
     <section *ngIf="isEqual(phase.type, 'analysis-phase')" class="card-body">
-      <h5 class="card-title">{{ phase.sys_fr }}</h5>
+      <h5
+        class="card-title"
+        (click)="editPhase(phase.id, phase.type)"
+        title="edit {{ phase.type }}"
+      >
+        <i class="fa-solid fa-pen-to-square"></i> {{ phase.sys_fr }}
+      </h5>
       <p class="card-text">
         <span class="fw-bold disabled">Audience</span> {{ phase.audience }}
       </p>
@@ -35,11 +46,14 @@
         <span class="fw-bold disabled">Purpose</span>
         {{ phase.purpose }}
       </p>
+      <section class="card-btn" title="view {{phase.type}}" (click)="viewPhase(phase.id, phase.type)">
+        <i class="fa-solid fa-angles-right"></i>
+      </section>
     </section>
   </section>
   <section class="card mb-1" *ngIf="phases.length == 0">
     <section class="card-body">
-      <h5 class="card-title">No Saved Phases</h5>
+      <h5 class="card-title text-center">No Saved Phases</h5>
     </section>
   </section>
 </section>

@@ -56,10 +56,14 @@ export class ListPhasesComponent {
     this.phases.reverse();
   }
 
-  selectedCard(id: number, type: string) {
+  editPhase(id: number, type: string) {
     if (type == 'init-phase') this.router.navigate(['sdlc', 'init-phase', id]);
     if (type == 'analysis-phase')
       this.router.navigate(['sdlc', 'analysis-phase', id]);
+  }
+
+  viewPhase(id: number, type: string) {
+    this.router.navigate(['sdlc', 'view-phase', type, id]);
   }
 
   isEqual(first_param: string, second_param: string) {

@@ -17,6 +17,7 @@ import { CreateInitPhaseComponent } from './components/create-init-phase/create-
 import { EditInitPhaseComponent } from './components/edit-init-phase/edit-init-phase.component';
 import { CreateAnalysisPhaseComponent } from './components/create-analysis-phase/create-analysis-phase.component';
 import { EditAnalysisPhaseComponent } from './components/edit-analysis-phase/edit-analysis-phase.component';
+import { ViewPhaseComponent } from './components/view-phase/view-phase.component';
 import { AllFilesComponent } from './pages/all-files/all-files.component';
 import { ListFilesComponent } from './components/list-files/list-files.component';
 import { ShowDiagramComponent } from './components/show-diagram/show-diagram.component';
@@ -34,6 +35,7 @@ import { CreateDesignPhaseComponent } from './components/create-design-phase/cre
     ShowDiagramComponent,
     ListFilesComponent,
     HomeComponent,
+    ViewPhaseComponent,
     EditAnalysisPhaseComponent,
     CreateAnalysisPhaseComponent,
     CreateDesignPhaseComponent,

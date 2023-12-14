@@ -114,9 +114,10 @@ export class CreateDesignPhaseComponent {
   }
 
   removeFile(index: number) {
-    if (index == 0) return;
-    this._file.splice(index, 1);
-    this.filesFormArray.removeAt(index);
+    if (index != 0) {
+      this._file.splice(index, 1);
+      this.filesFormArray.removeAt(index);
+    }
   }
 
   getError(controlName: string, index: number) {

@@ -11,6 +11,7 @@ import { EditAnalysisPhaseComponent } from './components/edit-analysis-phase/edi
 import { CreateDesignPhaseComponent } from './components/create-design-phase/create-design-phase.component';
 import { AllFilesComponent } from './pages/all-files/all-files.component';
 import { ShowDiagramComponent } from './components/show-diagram/show-diagram.component';
+import { ViewPhaseComponent } from './components/view-phase/view-phase.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // http://localhost:4200
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'analysis-phase', component: CreateAnalysisPhaseComponent }, // http://localhost:4200/sdlc/analysis-phase
       { path: 'analysis-phase/:id', component: EditAnalysisPhaseComponent }, // http://localhost:4200/sdlc/analysis-phase/:id
       { path: 'design-phase', component: CreateDesignPhaseComponent }, // http://localhost:4200/sdlc/design-phase
+      { path: 'view-phase/:type/:id', component: ViewPhaseComponent }, // http://localhost:4200/sdlc/view-phase/:type/:id
     ],
   }, // http://localhost:4200/sdlc
   {

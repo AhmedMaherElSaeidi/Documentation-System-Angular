@@ -80,7 +80,7 @@
   border-radius: 0.5em;
 }
 .phase-form .form-submit > button:last-child:hover i {
-  color: green;
+  color: #1634a6;
   cursor: pointer;
 }
 .phase-form .form-submit > button:last-child {
@@ -96,12 +96,11 @@
   height: 2.35em;
   align-items: center;
 }
-.phase-form .upload-file-container > section > input,
-.phase-form .upload-file-container > section > button {
+.phase-form .upload-file-container > section > input {
   margin-right: 0.25em;
   text-wrap: nowrap;
 }
-.phase-form .upload-file-container > section > button:hover i {
+.phase-form .upload-file-container > section > span:hover i {
   color: red;
   cursor: pointer;
 }
