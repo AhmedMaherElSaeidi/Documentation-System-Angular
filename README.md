@@ -1,27 +1,70 @@
-# AngularApolloApp
+# Documentation System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+## Table of Contents
+1. [SDLC Tab](#sdlc-tab)
+    1. [Project Phases](#project-phases)
+    2. [Using SDLC Tab](#using-sdlc-tab)
+2. [All Files Tab](#all-files-tab)
 
-## Development server
+## SDLC Tab
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Project Phases
 
-## Code scaffolding
+As we know, here are some common phases of software development:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Project Initiation
+- Requirements (Analysis)
+- Design
+- Development
+- Testing
+- Deployment
+- Maintenance
 
-## Build
+For simplicity, we will focus on the following phases in the application:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Project Initiation Phase: Project Charter document
+- Requirements Phase: Software Requirements Specification (SRS)
+- Design Phase: Software Design document (SDD)
 
-## Running unit tests
+Note: There are other documents used in these phases, but we will concentrate on these ones in our App.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Using SDLC Tab
 
-## Running end-to-end tests
+In this page as shown in the video, you will:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Create Documents:**
+   - Click the Create Button.
+   - Choose the phase you want to fill its information.
 
-## Further help
+2. **Fill and Validate the Form:**
+   - Fill the form of the chosen phase (you will find the form fields in the video).
+   - You can’t submit the form if any field is empty.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. **Edit or Delete Stored Documents:**
+   - The submitted form will be stored, and you can view the document information.
+   - You can edit or delete this information.
+
+4. **Requirements Phase:**
+   - When filling this form, choose an image for your Usecase Diagram.
+
+5. **Design Phase:**
+   - The form can include many rows of field groups.
+   - Each row has:
+     - File name field: will hold the name of the file.
+     - Browse image field: which will browse for the file itself (as an image).
+   - Each row (file name field and browse image field) will hold a Document.
+   - You can add any number of documents from the “Add new Document” button.
+   - By clicking this button, you will add a new document.
+   - Note: You can’t submit the form if any row has an empty field.
+
+## All Files Tab
+
+In this page, you will see all the files (images) you have entered in the different phases (requirement and design phases).
+
+Files (as images) may be:
+- UML Diagrams
+- Database Design
+- Usecase Diagram
+- User Interface (UI) Design
+
+You can tap on the file name, and the file will be displayed.
