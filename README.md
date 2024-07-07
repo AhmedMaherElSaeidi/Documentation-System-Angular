@@ -5,7 +5,6 @@
     1. [Project Phases](#project-phases)
     2. [Using SDLC Tab](#using-sdlc-tab)
 2. [All Files Tab](#all-files-tab)
-3. [UI](#user-interface)
 
 ## SDLC Tab
 
@@ -51,11 +50,5 @@ Files (as images) may be:
 - User Interface (UI) Design
 
 You can tap on the file name to display the file.
-
-## User Interface
-
-![Home Tab](./src/assets/images/home-view.png)
-![SDLC Tab](./src/assets/images/sdlc-view.jpg)
-![AllFiles Tab](./src/assets/images/allfiles-view.jpg)
 
 You can check the application backend here [Backend Repository](https://github.com/AhmedMaherElSaeidi/Documentation-System-NodeJS).
